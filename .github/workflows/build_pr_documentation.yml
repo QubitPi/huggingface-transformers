@@ -9,9 +9,23 @@ concurrency:
 
 jobs:
   build:
-    uses: huggingface/doc-builder/.github/workflows/build_pr_documentation.yml@main
+    uses: QubitPi/huggingface-doc-builder/.github/workflows/build_pr_documentation.yml@master
     with:
       commit_sha: ${{ github.event.pull_request.head.sha }}
       pr_number: ${{ github.event.number }}
-      package: transformers
+      package: huggingface-transformers
+      package_name: transformers
       languages: de en es fr hi it ko pt tr zh ja te
+    secrets:
+      slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+  build-publish:
+    uses: QubitPi/huggingface-doc-builder/.github/workflows/build_main_documentation.yml@master
+    with:
+      commit_sha: ${{ github.sha }}
+      package: huggingface-transformers
+      notebook_folder: transformers_doc
+      package_name: transformers
+      languages: de en es fr hi it ko pt tr zh ja te
+    secrets:
+      slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
