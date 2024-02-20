@@ -1,13 +1,13 @@
 <meta charset="utf-8" /><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;Optimize inference using torch.compile()&quot;,&quot;local&quot;:&quot;optimize-inference-using-torchcompile&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Benefits of torch.compile&quot;,&quot;local&quot;:&quot;benefits-of-torchcompile&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Benchmarking code&quot;,&quot;local&quot;:&quot;benchmarking-code&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Image Classification with ViT&quot;,&quot;local&quot;:&quot;image-classification-with-vit&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Object Detection with DETR&quot;,&quot;local&quot;:&quot;object-detection-with-detr&quot;,&quot;sections&quot;:[],&quot;depth&quot;:4},{&quot;title&quot;:&quot;Image Segmentation with Segformer&quot;,&quot;local&quot;:&quot;image-segmentation-with-segformer&quot;,&quot;sections&quot;:[],&quot;depth&quot;:4}],&quot;depth&quot;:3},{&quot;title&quot;:&quot;A100 (batch size: 1)&quot;,&quot;local&quot;:&quot;a100-batch-size-1&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;A100 (batch size: 4)&quot;,&quot;local&quot;:&quot;a100-batch-size-4&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;A100 (batch size: 16)&quot;,&quot;local&quot;:&quot;a100-batch-size-16&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;V100 (batch size: 1)&quot;,&quot;local&quot;:&quot;v100-batch-size-1&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;V100 (batch size: 4)&quot;,&quot;local&quot;:&quot;v100-batch-size-4&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;V100 (batch size: 16)&quot;,&quot;local&quot;:&quot;v100-batch-size-16&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;T4 (batch size: 1)&quot;,&quot;local&quot;:&quot;t4-batch-size-1&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;T4 (batch size: 4)&quot;,&quot;local&quot;:&quot;t4-batch-size-4&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;T4 (batch size: 16)&quot;,&quot;local&quot;:&quot;t4-batch-size-16&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}],&quot;depth&quot;:2},{&quot;title&quot;:&quot;PyTorch Nightly&quot;,&quot;local&quot;:&quot;pytorch-nightly&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;A100&quot;,&quot;local&quot;:&quot;a100&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;T4&quot;,&quot;local&quot;:&quot;t4&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Reduce Overhead&quot;,&quot;local&quot;:&quot;reduce-overhead&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;A100&quot;,&quot;local&quot;:&quot;a100&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;T4&quot;,&quot;local&quot;:&quot;t4&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}],&quot;depth&quot;:2}],&quot;depth&quot;:1}">
 		<link href="/huggingface-transformers/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/entry/start.0c5c785a.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/entry/start.a0f31254.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/scheduler.9bc65507.js">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/singletons.682eeb34.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/singletons.3f816c0a.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/index.3b203c72.js">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/paths.023c20fd.js">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/entry/app.26c85b24.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/paths.6f8a6f1b.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/entry/app.4e82daba.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/index.707bf1b6.js">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/nodes/0.dcd68134.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/nodes/0.0c92dd0d.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/each.e59479a4.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/nodes/324.0e13e266.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/CodeBlock.54a9f38d.js">
@@ -54,7 +54,7 @@ seg_inputs = processor(images=image, return_tensors=<span class="hljs-string">&q
 			
 			<script>
 				{
-					__sveltekit_nduh7d = {
+					__sveltekit_58svxy = {
 						assets: "/huggingface-transformers",
 						base: "/huggingface-transformers",
 						env: {}
@@ -65,8 +65,8 @@ seg_inputs = processor(images=image, return_tensors=<span class="hljs-string">&q
 					const data = [null,null];
 
 					Promise.all([
-						import("/huggingface-transformers/_app/immutable/entry/start.0c5c785a.js"),
-						import("/huggingface-transformers/_app/immutable/entry/app.26c85b24.js")
+						import("/huggingface-transformers/_app/immutable/entry/start.a0f31254.js"),
+						import("/huggingface-transformers/_app/immutable/entry/app.4e82daba.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 324],

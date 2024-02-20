@@ -1,13 +1,13 @@
 <meta charset="utf-8" /><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;Efficient Training on Multiple GPUs&quot;,&quot;local&quot;:&quot;efficient-training-on-multiple-gpus&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Scalability strategy&quot;,&quot;local&quot;:&quot;scalability-strategy&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Data Parallelism&quot;,&quot;local&quot;:&quot;data-parallelism&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;DataParallel vs DistributedDataParallel&quot;,&quot;local&quot;:&quot;dataparallel-vs-distributeddataparallel&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}],&quot;depth&quot;:2},{&quot;title&quot;:&quot;ZeRO Data Parallelism&quot;,&quot;local&quot;:&quot;zero-data-parallelism&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;From Naive Model Parallelism to Pipeline Parallelism&quot;,&quot;local&quot;:&quot;from-naive-model-parallelism-to-pipeline-parallelism&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Tensor Parallelism&quot;,&quot;local&quot;:&quot;tensor-parallelism&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Data Parallelism + Pipeline Parallelism&quot;,&quot;local&quot;:&quot;data-parallelism--pipeline-parallelism&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Data Parallelism + Pipeline Parallelism + Tensor Parallelism&quot;,&quot;local&quot;:&quot;data-parallelism--pipeline-parallelism--tensor-parallelism&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;ZeRO Data Parallelism + Pipeline Parallelism + Tensor Parallelism&quot;,&quot;local&quot;:&quot;zero-data-parallelism--pipeline-parallelism--tensor-parallelism&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;FlexFlow&quot;,&quot;local&quot;:&quot;flexflow&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;GPU selection&quot;,&quot;local&quot;:&quot;gpu-selection&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Number of GPUs&quot;,&quot;local&quot;:&quot;number-of-gpus&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;Order of GPUs&quot;,&quot;local&quot;:&quot;order-of-gpus&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}],&quot;depth&quot;:2}],&quot;depth&quot;:1}">
 		<link href="/huggingface-transformers/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/entry/start.0c5c785a.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/entry/start.a0f31254.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/scheduler.9bc65507.js">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/singletons.682eeb34.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/singletons.3f816c0a.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/index.3b203c72.js">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/paths.023c20fd.js">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/entry/app.26c85b24.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/paths.6f8a6f1b.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/entry/app.4e82daba.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/index.707bf1b6.js">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/nodes/0.dcd68134.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/nodes/0.0c92dd0d.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/each.e59479a4.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/nodes/327.207a4866.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/Tip.c2ecdbf4.js">
@@ -168,7 +168,7 @@ which is a prerequisite for FlexFlow, however, changes are required on the FlexF
 			
 			<script>
 				{
-					__sveltekit_nduh7d = {
+					__sveltekit_58svxy = {
 						assets: "/huggingface-transformers",
 						base: "/huggingface-transformers",
 						env: {}
@@ -179,8 +179,8 @@ which is a prerequisite for FlexFlow, however, changes are required on the FlexF
 					const data = [null,null];
 
 					Promise.all([
-						import("/huggingface-transformers/_app/immutable/entry/start.0c5c785a.js"),
-						import("/huggingface-transformers/_app/immutable/entry/app.26c85b24.js")
+						import("/huggingface-transformers/_app/immutable/entry/start.a0f31254.js"),
+						import("/huggingface-transformers/_app/immutable/entry/app.4e82daba.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 327],

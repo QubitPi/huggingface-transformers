@@ -1,13 +1,13 @@
 <meta charset="utf-8" /><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;DeepSpeed&quot;,&quot;local&quot;:&quot;deepspeed&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Installation&quot;,&quot;local&quot;:&quot;installation&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Memory requirements&quot;,&quot;local&quot;:&quot;memory-requirements&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Select a ZeRO stage&quot;,&quot;local&quot;:&quot;select-a-zero-stage&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;DeepSpeed configuration file&quot;,&quot;local&quot;:&quot;deepspeed-configuration-file&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;DeepSpeed and Trainer parameters&quot;,&quot;local&quot;:&quot;deepspeed-and-trainer-parameters&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;ZeRO configuration&quot;,&quot;local&quot;:&quot;zero-configuration&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;NVMe configuration&quot;,&quot;local&quot;:&quot;nvme-configuration&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}],&quot;depth&quot;:2},{&quot;title&quot;:&quot;DeepSpeed features&quot;,&quot;local&quot;:&quot;deepspeed-features&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Activation/gradient checkpointing&quot;,&quot;local&quot;:&quot;activationgradient-checkpointing&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;Optimizer and scheduler&quot;,&quot;local&quot;:&quot;optimizer-and-scheduler&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;Precision&quot;,&quot;local&quot;:&quot;precision&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;Batch size&quot;,&quot;local&quot;:&quot;batch-size&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;Gradient accumulation&quot;,&quot;local&quot;:&quot;gradient-accumulation&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;Gradient clipping&quot;,&quot;local&quot;:&quot;gradient-clipping&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;Communication data type&quot;,&quot;local&quot;:&quot;communication-data-type&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Deployment&quot;,&quot;local&quot;:&quot;deployment&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Multi-node deployment&quot;,&quot;local&quot;:&quot;multi-node-deployment&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;SLURM&quot;,&quot;local&quot;:&quot;slurm&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;Notebook&quot;,&quot;local&quot;:&quot;notebook&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Save model weights&quot;,&quot;local&quot;:&quot;save-model-weights&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Online&quot;,&quot;local&quot;:&quot;online&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;Offline&quot;,&quot;local&quot;:&quot;offline&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}],&quot;depth&quot;:2},{&quot;title&quot;:&quot;ZeRO Inference&quot;,&quot;local&quot;:&quot;zero-inference&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Non-Trainer DeepSpeed integration&quot;,&quot;local&quot;:&quot;non-trainer-deepspeed-integration&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Non-Trainer ZeRO Inference&quot;,&quot;local&quot;:&quot;non-trainer-zero-inference&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;Generate&quot;,&quot;local&quot;:&quot;generate&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Troubleshoot&quot;,&quot;local&quot;:&quot;troubleshoot&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;DeepSpeed process killed at startup&quot;,&quot;local&quot;:&quot;deepspeed-process-killed-at-startup&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;NaN loss&quot;,&quot;local&quot;:&quot;nan-loss&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Resources&quot;,&quot;local&quot;:&quot;resources&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}">
 		<link href="/huggingface-transformers/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/entry/start.0c5c785a.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/entry/start.a0f31254.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/scheduler.9bc65507.js">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/singletons.682eeb34.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/singletons.3f816c0a.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/index.3b203c72.js">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/paths.023c20fd.js">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/entry/app.26c85b24.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/paths.6f8a6f1b.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/entry/app.4e82daba.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/index.707bf1b6.js">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/nodes/0.dcd68134.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/nodes/0.0c92dd0d.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/each.e59479a4.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/nodes/18.0a31bf7f.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/Tip.c2ecdbf4.js">
@@ -415,7 +415,7 @@ python -c <span class="hljs-string">&#x27;import deepspeed; print(f&quot;deepspe
 			
 			<script>
 				{
-					__sveltekit_nduh7d = {
+					__sveltekit_58svxy = {
 						assets: "/huggingface-transformers",
 						base: "/huggingface-transformers",
 						env: {}
@@ -426,8 +426,8 @@ python -c <span class="hljs-string">&#x27;import deepspeed; print(f&quot;deepspe
 					const data = [null,null];
 
 					Promise.all([
-						import("/huggingface-transformers/_app/immutable/entry/start.0c5c785a.js"),
-						import("/huggingface-transformers/_app/immutable/entry/app.26c85b24.js")
+						import("/huggingface-transformers/_app/immutable/entry/start.a0f31254.js"),
+						import("/huggingface-transformers/_app/immutable/entry/app.4e82daba.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 18],

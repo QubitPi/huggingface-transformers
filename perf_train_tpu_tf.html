@@ -1,13 +1,13 @@
 <meta charset="utf-8" /><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;Training on TPU with TensorFlow&quot;,&quot;local&quot;:&quot;training-on-tpu-with-tensorflow&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;What is a TPU?&quot;,&quot;local&quot;:&quot;what-is-a-tpu&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;What kinds of TPU are available?&quot;,&quot;local&quot;:&quot;what-kinds-of-tpu-are-available&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;What sizes of TPU are available?&quot;,&quot;local&quot;:&quot;what-sizes-of-tpu-are-available&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;I keep hearing about this XLA thing. What’s XLA, and how does it relate to TPUs?&quot;,&quot;local&quot;:&quot;i-keep-hearing-about-this-xla-thing-whats-xla-and-how-does-it-relate-to-tpus&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;How do I make my model XLA compatible?&quot;,&quot;local&quot;:&quot;how-do-i-make-my-model-xla-compatible&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;XLA Rule #1: Your code cannot have “data-dependent conditionals”&quot;,&quot;local&quot;:&quot;xla-rule-1-your-code-cannot-have-data-dependent-conditionals&quot;,&quot;sections&quot;:[],&quot;depth&quot;:4},{&quot;title&quot;:&quot;XLA Rule #2: Your code cannot have “data-dependent shapes”&quot;,&quot;local&quot;:&quot;xla-rule-2-your-code-cannot-have-data-dependent-shapes&quot;,&quot;sections&quot;:[],&quot;depth&quot;:4},{&quot;title&quot;:&quot;XLA Rule #3: XLA will need to recompile your model for every different input shape it sees&quot;,&quot;local&quot;:&quot;xla-rule-3-xla-will-need-to-recompile-your-model-for-every-different-input-shape-it-sees&quot;,&quot;sections&quot;:[],&quot;depth&quot;:4}],&quot;depth&quot;:3},{&quot;title&quot;:&quot;How do I actually train my model on TPU?&quot;,&quot;local&quot;:&quot;how-do-i-actually-train-my-model-on-tpu&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;Summary&quot;,&quot;local&quot;:&quot;summary&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}],&quot;depth&quot;:1}">
 		<link href="/huggingface-transformers/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/entry/start.0c5c785a.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/entry/start.a0f31254.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/scheduler.9bc65507.js">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/singletons.682eeb34.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/singletons.3f816c0a.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/index.3b203c72.js">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/paths.023c20fd.js">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/entry/app.26c85b24.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/paths.6f8a6f1b.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/entry/app.4e82daba.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/index.707bf1b6.js">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/nodes/0.dcd68134.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/nodes/0.0c92dd0d.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/each.e59479a4.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/nodes/330.c8200334.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/Tip.c2ecdbf4.js">
@@ -25,7 +25,7 @@ mean_loss = tf.reduce_sum(loss) / tf.reduce_sum(label_mask)<!-- HTML_TAG_END -->
 			
 			<script>
 				{
-					__sveltekit_nduh7d = {
+					__sveltekit_58svxy = {
 						assets: "/huggingface-transformers",
 						base: "/huggingface-transformers",
 						env: {}
@@ -36,8 +36,8 @@ mean_loss = tf.reduce_sum(loss) / tf.reduce_sum(label_mask)<!-- HTML_TAG_END -->
 					const data = [null,null];
 
 					Promise.all([
-						import("/huggingface-transformers/_app/immutable/entry/start.0c5c785a.js"),
-						import("/huggingface-transformers/_app/immutable/entry/app.26c85b24.js")
+						import("/huggingface-transformers/_app/immutable/entry/start.a0f31254.js"),
+						import("/huggingface-transformers/_app/immutable/entry/app.4e82daba.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 330],

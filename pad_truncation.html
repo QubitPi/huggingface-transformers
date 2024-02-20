@@ -1,13 +1,13 @@
 <meta charset="utf-8" /><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;Padding and truncation&quot;,&quot;local&quot;:&quot;padding-and-truncation&quot;,&quot;sections&quot;:[],&quot;depth&quot;:1}">
 		<link href="/huggingface-transformers/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/entry/start.0c5c785a.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/entry/start.a0f31254.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/scheduler.9bc65507.js">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/singletons.682eeb34.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/singletons.3f816c0a.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/index.3b203c72.js">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/paths.023c20fd.js">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/entry/app.26c85b24.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/paths.6f8a6f1b.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/entry/app.4e82daba.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/index.707bf1b6.js">
-		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/nodes/0.dcd68134.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/nodes/0.0c92dd0d.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/each.e59479a4.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/nodes/319.bc4ec042.js">
 		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/Heading.342b1fa6.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;Padding and truncation&quot;,&quot;local&quot;:&quot;padding-and-truncation&quot;,&quot;sections&quot;:[],&quot;depth&quot;:1}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>   <h1 class="relative group"><a id="padding-and-truncation" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#padding-and-truncation"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>Padding and truncation</span></h1> <p data-svelte-h="svelte-18l3nu8">Batched inputs are often different lengths, so they can’t be converted to fixed-size tensors. Padding and truncation are strategies for dealing with this problem, to create rectangular tensors from batches of varying lengths. Padding adds a special <strong>padding token</strong> to ensure shorter sequences will have the same length as either the longest sequence in a batch or the maximum length accepted by the model. Truncation works in the other direction by truncating long sequences.</p> <p data-svelte-h="svelte-4dmk3p">In most cases, padding your batch to the length of the longest sequence and truncating to the maximum length a model can accept works pretty well. However, the API supports more strategies if you need them. The three arguments you need to are: <code>padding</code>, <code>truncation</code> and <code>max_length</code>.</p> <p data-svelte-h="svelte-1xxctal">The <code>padding</code> argument controls padding. It can be a boolean or a string:</p> <ul data-svelte-h="svelte-1pqvfv8"><li><code>True</code> or <code>&#39;longest&#39;</code>: pad to the longest sequence in the batch (no padding is applied if you only provide
@@ -24,7 +24,7 @@ the first sentence of a pair if a pair of sequences (or a batch of pairs of sequ
 			
 			<script>
 				{
-					__sveltekit_nduh7d = {
+					__sveltekit_58svxy = {
 						assets: "/huggingface-transformers",
 						base: "/huggingface-transformers",
 						env: {}
@@ -35,8 +35,8 @@ the first sentence of a pair if a pair of sequences (or a batch of pairs of sequ
 					const data = [null,null];
 
 					Promise.all([
-						import("/huggingface-transformers/_app/immutable/entry/start.0c5c785a.js"),
-						import("/huggingface-transformers/_app/immutable/entry/app.26c85b24.js")
+						import("/huggingface-transformers/_app/immutable/entry/start.a0f31254.js"),
+						import("/huggingface-transformers/_app/immutable/entry/app.4e82daba.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 319],
