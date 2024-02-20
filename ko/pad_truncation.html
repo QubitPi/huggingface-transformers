@@ -1,0 +1,47 @@
+<meta charset="utf-8" /><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;패딩과 잘라내기&quot;,&quot;local&quot;:&quot;padding-and-truncation&quot;,&quot;sections&quot;:[],&quot;depth&quot;:1}">
+		<link href="/docs/transformers/main/ko/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
+		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/entry/start.b52dcfcd.js">
+		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/scheduler.56730f09.js">
+		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/singletons.394dd9a4.js">
+		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/index.bdfeb96e.js">
+		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/paths.538504d0.js">
+		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/entry/app.9c1dbc76.js">
+		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/index.1f144517.js">
+		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/nodes/0.cc7e2a6a.js">
+		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/each.e59479a4.js">
+		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/nodes/29.1c344269.js">
+		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/Heading.57d46534.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;패딩과 잘라내기&quot;,&quot;local&quot;:&quot;padding-and-truncation&quot;,&quot;sections&quot;:[],&quot;depth&quot;:1}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>   <h1 class="relative group"><a id="padding-and-truncation" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#padding-and-truncation"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>패딩과 잘라내기</span></h1> <p data-svelte-h="svelte-1kgkqqg">배치 입력은 길이가 다른 경우가 많아서 고정 크기 텐서로 변환할 수 없습니다. 패딩과 잘라내기는 다양한 길이의 배치에서 직사각형 텐서를 생성할 수 있도록 이 문제를 해결하는 전략입니다. 패딩은 특수한 <strong>패딩 토큰</strong>을 추가하여 짧은 시퀀스가 배치에서 가장 긴 시퀀스 또는 모델에서 허용하는 최대 길이와 동일한 길이를 갖도록 합니다. 잘라내기는 긴 시퀀스를 잘라내어 패딩과 다른 방식으로 시퀀스의 길이를 동일하게 합니다.</p> <p data-svelte-h="svelte-1y0dvow">대부분의 경우 배치에 가장 긴 시퀀스의 길이로 패딩하고 모델이 허용할 수 있는 최대 길이로 잘라내는 것이 잘 작동합니다. 그러나 필요하다면 API가 지원하는 더 많은 전략을 사용할 수 있습니다. 필요한 인수는 <code>padding</code>, <code>truncation</code>, <code>max_length</code> 세 가지입니다.</p> <p data-svelte-h="svelte-w9e6b"><code>padding</code> 인수는 패딩을 제어합니다. 불리언 또는 문자열일 수 있습니다:</p> <ul data-svelte-h="svelte-1itic58"><li><code>True</code> 또는 <code>&#39;longest&#39;</code>: 배치에서 가장 긴 시퀀스로 패딩합니다(단일 시퀀스만 제공하는 경우 패딩이 적용되지 않습니다).</li> <li><code>&#39;max_length&#39;</code>: <code>max_length</code> 인수가 지정한 길이로 패딩하거나, <code>max_length</code>가 제공되지 않은 경우(<code>max_length=None</code>) 모델에서 허용되는 최대 길이로 패딩합니다. 단일 시퀀스만 제공하는 경우에도 패딩이 적용됩니다.</li> <li><code>False</code> 또는 <code>&#39;do_not_pad&#39;</code>: 패딩이 적용되지 않습니다. 이것이 기본 동작입니다.</li></ul> <p data-svelte-h="svelte-1qg04jt"><code>truncation</code> 인수는 잘라낼 방법을 정합니다. 불리언 또는 문자열일 수 있습니다:</p> <ul data-svelte-h="svelte-wz5ar8"><li><code>True</code> 또는 <code>longest_first</code>: <code>max_length</code> 인수가 지정한 최대 길이로 잘라내거나,
+<code>max_length</code>가 제공되지 않은 경우(<code>max_length=None</code>) 모델에서 허용되는 최대 길이로 잘라냅니다.
+시퀀스 쌍에서 가장 긴 시퀀스의 토큰을 적절한 길이에 도달할 때까지 하나씩 제거합니다.</li> <li><code>&#39;only_second&#39;</code>: <code>max_length</code> 인수가 지정한 최대 길이로 잘라내거나,
+<code>max_length</code>가 제공되지 않은 경우(<code>max_length=None</code>) 모델에서 허용되는 최대 길이로 잘라냅니다.
+시퀀스 쌍(또는 시퀀스 쌍의 배치)가 제공된 경우 쌍의 두 번째 문장만 잘라냅니다.</li> <li><code>&#39;only_first&#39;</code>: <code>max_length</code> 인수가 지정한 최대 길이로 잘라내거나,
+<code>max_length</code>가 제공되지 않은 경우(<code>max_length=None</code>) 모델에서 허용되는 최대 길이로 잘라냅니다.
+시퀀스 쌍(또는 시퀀스 쌍의 배치)가 제공된 경우 쌍의 첫 번째 문장만 잘라냅니다.</li> <li><code>False</code> 또는 <code>&#39;do_not_truncate&#39;</code>: 잘라내기를 적용하지 않습니다. 이것이 기본 동작입니다.</li></ul> <p data-svelte-h="svelte-1qbqwzu"><code>max_length</code> 인수는 패딩 및 잘라내기를 적용할 길이를 제어합니다. 이 인수는 정수 또는 <code>None</code>일 수 있으며, <code>None</code>일 경우 모델이 허용할 수 있는 최대 길이로 기본값이 설정됩니다. 모델에 특정한 최대 입력 길이가 없는 경우 <code>max_length</code>에 대한 잘라내기 또는 패딩이 비활성화됩니다.</p> <p data-svelte-h="svelte-5p7u51">다음 표에는 패딩 및 잘라내기를 설정하는 권장 방법이 요약되어 있습니다.
+입력으로 시퀀스 쌍을 사용하는 경우, 다음 예제에서 <code>truncation=True</code>를 <code>[&#39;only_first&#39;, &#39;only_second&#39;, &#39;longest_first&#39;]</code>에서 선택한 <code>STRATEGY</code>, 즉 <code>truncation=&#39;only_second&#39;</code> 또는 <code>truncation=&#39;longest_first&#39;</code>로 바꾸면 앞서 설명한 대로 쌍의 두 시퀀스가 잘리는 방식을 제어할 수 있습니다.</p> <table data-svelte-h="svelte-1ydxww1"><thead><tr><th>잘라내기</th> <th>패딩</th> <th>사용 방법</th></tr></thead> <tbody><tr><td>잘라내기 없음</td> <td>패딩 없음</td> <td><code>tokenizer(batch_sentences)</code></td></tr> <tr><td></td> <td>배치 내 최대 길이로 패딩</td> <td><code>tokenizer(batch_sentences, padding=True)</code> 또는</td></tr> <tr><td></td> <td></td> <td><code>tokenizer(batch_sentences, padding=&#39;longest&#39;)</code></td></tr> <tr><td></td> <td>모델의 최대 입력 길이로 패딩</td> <td><code>tokenizer(batch_sentences, padding=&#39;max_length&#39;)</code></td></tr> <tr><td></td> <td>특정 길이로 패딩</td> <td><code>tokenizer(batch_sentences, padding=&#39;max_length&#39;, max_length=42)</code></td></tr> <tr><td></td> <td>다양한 길이로 패딩</td> <td><code>tokenizer(batch_sentences, padding=True, pad_to_multiple_of=8)</code></td></tr> <tr><td>모델의 최대 입력 길이로 잘라내기</td> <td>패딩 없음</td> <td><code>tokenizer(batch_sentences, truncation=True)</code> 또는</td></tr> <tr><td></td> <td></td> <td><code>tokenizer(batch_sentences, truncation=STRATEGY)</code></td></tr> <tr><td></td> <td>배치 내 최대 길이로 패딩</td> <td><code>tokenizer(batch_sentences, padding=True, truncation=True)</code> 또는</td></tr> <tr><td></td> <td></td> <td><code>tokenizer(batch_sentences, padding=True, truncation=STRATEGY)</code></td></tr> <tr><td></td> <td>모델의 최대 입력 길이로 패딩</td> <td><code>tokenizer(batch_sentences, padding=&#39;max_length&#39;, truncation=True)</code> 또는</td></tr> <tr><td></td> <td></td> <td><code>tokenizer(batch_sentences, padding=&#39;max_length&#39;, truncation=STRATEGY)</code></td></tr> <tr><td></td> <td>특정 길이로 패딩</td> <td>사용 불가</td></tr> <tr><td>특정 길이로 잘라내기</td> <td>패딩 없음</td> <td><code>tokenizer(batch_sentences, truncation=True, max_length=42)</code> 또는</td></tr> <tr><td></td> <td></td> <td><code>tokenizer(batch_sentences, truncation=STRATEGY, max_length=42)</code></td></tr> <tr><td></td> <td>배치 내 최대 길이로 패딩</td> <td><code>tokenizer(batch_sentences, padding=True, truncation=True, max_length=42)</code> 또는</td></tr> <tr><td></td> <td></td> <td><code>tokenizer(batch_sentences, padding=True, truncation=STRATEGY, max_length=42)</code></td></tr> <tr><td></td> <td>모델의 최대 입력 길이로 패딩</td> <td>사용 불가</td></tr> <tr><td></td> <td>특정 길이로 패딩</td> <td><code>tokenizer(batch_sentences, padding=&#39;max_length&#39;, truncation=True, max_length=42)</code> 또는</td></tr> <tr><td></td> <td></td> <td><code>tokenizer(batch_sentences, padding=&#39;max_length&#39;, truncation=STRATEGY, max_length=42)</code></td></tr></tbody></table>  <p></p> 
+			
+			<script>
+				{
+					__sveltekit_1tvlkwq = {
+						assets: "/docs/transformers/main/ko",
+						base: "/docs/transformers/main/ko",
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("/docs/transformers/main/ko/_app/immutable/entry/start.b52dcfcd.js"),
+						import("/docs/transformers/main/ko/_app/immutable/entry/app.9c1dbc76.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 29],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		

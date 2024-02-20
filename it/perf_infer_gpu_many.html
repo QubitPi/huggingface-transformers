@@ -1,0 +1,41 @@
+<meta charset="utf-8" /><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;Inferenza Efficiente su GPU Multiple&quot;,&quot;local&quot;:&quot;inferenza-efficiente-su-gpu-multiple&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;BetterTransformer per inferenza più rapida&quot;,&quot;local&quot;:&quot;bettertransformer-per-inferenza-più-rapida&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}">
+		<link href="/docs/transformers/main/it/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
+		<link rel="modulepreload" href="/docs/transformers/main/it/_app/immutable/entry/start.43db6540.js">
+		<link rel="modulepreload" href="/docs/transformers/main/it/_app/immutable/chunks/scheduler.36a0863c.js">
+		<link rel="modulepreload" href="/docs/transformers/main/it/_app/immutable/chunks/singletons.45ce1382.js">
+		<link rel="modulepreload" href="/docs/transformers/main/it/_app/immutable/chunks/index.733708bb.js">
+		<link rel="modulepreload" href="/docs/transformers/main/it/_app/immutable/chunks/paths.1aea6fcd.js">
+		<link rel="modulepreload" href="/docs/transformers/main/it/_app/immutable/entry/app.36c01f28.js">
+		<link rel="modulepreload" href="/docs/transformers/main/it/_app/immutable/chunks/index.9c13489a.js">
+		<link rel="modulepreload" href="/docs/transformers/main/it/_app/immutable/nodes/0.baec073c.js">
+		<link rel="modulepreload" href="/docs/transformers/main/it/_app/immutable/chunks/each.e59479a4.js">
+		<link rel="modulepreload" href="/docs/transformers/main/it/_app/immutable/nodes/19.677cd4e1.js">
+		<link rel="modulepreload" href="/docs/transformers/main/it/_app/immutable/chunks/Tip.3b06990e.js">
+		<link rel="modulepreload" href="/docs/transformers/main/it/_app/immutable/chunks/Heading.7a254a62.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;Inferenza Efficiente su GPU Multiple&quot;,&quot;local&quot;:&quot;inferenza-efficiente-su-gpu-multiple&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;BetterTransformer per inferenza più rapida&quot;,&quot;local&quot;:&quot;bettertransformer-per-inferenza-più-rapida&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>   <h1 class="relative group"><a id="inferenza-efficiente-su-gpu-multiple" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#inferenza-efficiente-su-gpu-multiple"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>Inferenza Efficiente su GPU Multiple</span></h1> <p data-svelte-h="svelte-anqryh">Questo documento contiene informazioni su come fare inferenza in maniera efficiente su GPU multiple.</p>  <div class="course-tip  bg-gradient-to-br dark:bg-gradient-to-r before:border-green-500 dark:before:border-green-800 from-green-50 dark:from-gray-900 to-white dark:to-gray-950 border border-green-50 text-green-700 dark:text-gray-400"><p data-svelte-h="svelte-1x4c7ja">Nota: Un setup con GPU multiple può utilizzare la maggior parte delle strategie descritte nella <a href="./perf_infer_gpu_one">sezione con GPU singola</a>. Tuttavia, è necessario conoscere delle tecniche semplici che possono essere utilizzate per un risultato migliore.</p></div>  <h2 class="relative group"><a id="bettertransformer-per-inferenza-più-rapida" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#bettertransformer-per-inferenza-più-rapida"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>BetterTransformer per inferenza più rapida</span></h2> <p data-svelte-h="svelte-j8irol">Abbiamo recentemente integrato <code>BetterTransformer</code> per inferenza più rapida su multi-GPU per modelli su testo, immagini e audio. Controlla il documento con queste integrazioni <a href="https://huggingface.co/docs/optimum/bettertransformer/overview" rel="nofollow">qui</a> per maggiori dettagli.</p>  <p></p> 
+			
+			<script>
+				{
+					__sveltekit_1n8j2d2 = {
+						assets: "/docs/transformers/main/it",
+						base: "/docs/transformers/main/it",
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("/docs/transformers/main/it/_app/immutable/entry/start.43db6540.js"),
+						import("/docs/transformers/main/it/_app/immutable/entry/app.36c01f28.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 19],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		

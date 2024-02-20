@@ -1,0 +1,47 @@
+<meta charset="utf-8" /><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;BERTology&quot;,&quot;local&quot;:&quot;bertology&quot;,&quot;sections&quot;:[],&quot;depth&quot;:1}">
+		<link href="/docs/transformers/main/ko/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
+		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/entry/start.b52dcfcd.js">
+		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/scheduler.56730f09.js">
+		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/singletons.394dd9a4.js">
+		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/index.bdfeb96e.js">
+		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/paths.538504d0.js">
+		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/entry/app.9c1dbc76.js">
+		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/index.1f144517.js">
+		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/nodes/0.cc7e2a6a.js">
+		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/each.e59479a4.js">
+		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/nodes/8.482f1720.js">
+		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/Heading.57d46534.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;BERTology&quot;,&quot;local&quot;:&quot;bertology&quot;,&quot;sections&quot;:[],&quot;depth&quot;:1}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>   <h1 class="relative group"><a id="bertology" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#bertology"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>BERTology</span></h1> <p data-svelte-h="svelte-1j2i4ka">BERT와 같은 대규모 트랜스포머의 내부 동작을 조사하는 연구 분야가 점점 더 중요해지고 있습니다.
+혹자는 “BERTology”라 칭하기도 합니다. 이 분야의 좋은 예시는 다음과 같습니다:</p> <ul data-svelte-h="svelte-7yh4qj"><li>BERT는 고전적인 NLP 파이프라인의 재발견 - Ian Tenney, Dipanjan Das, Ellie Pavlick:
+<a href="https://arxiv.org/abs/1905.05950" rel="nofollow">https://arxiv.org/abs/1905.05950</a></li> <li>16개의 헤드가 정말로 1개보다 나은가? - Paul Michel, Omer Levy, Graham Neubig:
+<a href="https://arxiv.org/abs/1905.10650" rel="nofollow">https://arxiv.org/abs/1905.10650</a></li> <li>BERT는 무엇을 보는가? BERT의 어텐션 분석 - Kevin Clark, Urvashi Khandelwal, Omer Levy, Christopher D. Manning:
+<a href="https://arxiv.org/abs/1906.04341" rel="nofollow">https://arxiv.org/abs/1906.04341</a></li> <li>CAT-probing: 프로그래밍 언어에 대해 사전훈련된 모델이 어떻게 코드 구조를 보는지 알아보기 위한 메트릭 기반 접근 방법:
+<a href="https://arxiv.org/abs/2210.04633" rel="nofollow">https://arxiv.org/abs/2210.04633</a></li></ul> <p data-svelte-h="svelte-qnfkt5">우리는 이 새로운 연구 분야의 발전을 돕기 위해, BERT/GPT/GPT-2 모델에 내부 표현을 살펴볼 수 있는 몇 가지 기능을 추가했습니다.
+이 기능들은 주로 Paul Michel의 훌륭한 작업을 참고하여 개발되었습니다
+(<a href="https://arxiv.org/abs/1905.10650" rel="nofollow">https://arxiv.org/abs/1905.10650</a>):</p> <ul data-svelte-h="svelte-1btj3hc"><li>BERT/GPT/GPT-2의 모든 은닉 상태에 접근하기,</li> <li>BERT/GPT/GPT-2의 각 헤드의 모든 어텐션 가중치에 접근하기,</li> <li>헤드의 출력 값과 그래디언트를 검색하여 헤드 중요도 점수를 계산하고 <a href="https://arxiv.org/abs/1905.10650%EC%97%90%EC%84%9C" rel="nofollow">https://arxiv.org/abs/1905.10650에서</a> 설명된 대로 헤드를 제거하는 기능을 제공합니다.</li></ul> <p data-svelte-h="svelte-5ng9ah">이러한 기능들을 이해하고 직접 사용해볼 수 있도록 <a href="https://github.com/huggingface/transformers/tree/main/examples/research_projects/bertology/run_bertology.py" rel="nofollow">bertology.py</a> 예제 스크립트를 추가했습니다. 이 예제 스크립트에서는 GLUE에 대해 사전훈련된 모델에서 정보를 추출하고 모델을 가지치기(prune)해봅니다.</p>  <p></p> 
+			
+			<script>
+				{
+					__sveltekit_1tvlkwq = {
+						assets: "/docs/transformers/main/ko",
+						base: "/docs/transformers/main/ko",
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("/docs/transformers/main/ko/_app/immutable/entry/start.b52dcfcd.js"),
+						import("/docs/transformers/main/ko/_app/immutable/entry/app.9c1dbc76.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 8],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		
