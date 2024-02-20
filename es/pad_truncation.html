@@ -1,16 +1,16 @@
 <meta charset="utf-8" /><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;Relleno y truncamiento&quot;,&quot;local&quot;:&quot;relleno-y-truncamiento&quot;,&quot;sections&quot;:[],&quot;depth&quot;:1}">
-		<link href="/docs/transformers/main/es/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
-		<link rel="modulepreload" href="/docs/transformers/main/es/_app/immutable/entry/start.ff5e079f.js">
-		<link rel="modulepreload" href="/docs/transformers/main/es/_app/immutable/chunks/scheduler.36a0863c.js">
-		<link rel="modulepreload" href="/docs/transformers/main/es/_app/immutable/chunks/singletons.46861b0d.js">
-		<link rel="modulepreload" href="/docs/transformers/main/es/_app/immutable/chunks/index.733708bb.js">
-		<link rel="modulepreload" href="/docs/transformers/main/es/_app/immutable/chunks/paths.c201d501.js">
-		<link rel="modulepreload" href="/docs/transformers/main/es/_app/immutable/entry/app.12ec5d09.js">
-		<link rel="modulepreload" href="/docs/transformers/main/es/_app/immutable/chunks/index.f891bdb2.js">
-		<link rel="modulepreload" href="/docs/transformers/main/es/_app/immutable/nodes/0.222dfd74.js">
-		<link rel="modulepreload" href="/docs/transformers/main/es/_app/immutable/chunks/each.e59479a4.js">
-		<link rel="modulepreload" href="/docs/transformers/main/es/_app/immutable/nodes/17.ca069f35.js">
-		<link rel="modulepreload" href="/docs/transformers/main/es/_app/immutable/chunks/Heading.3fb90772.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;Relleno y truncamiento&quot;,&quot;local&quot;:&quot;relleno-y-truncamiento&quot;,&quot;sections&quot;:[],&quot;depth&quot;:1}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>   <h1 class="relative group"><a id="relleno-y-truncamiento" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#relleno-y-truncamiento"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>Relleno y truncamiento</span></h1> <p data-svelte-h="svelte-9hx8pb">Las entradas agrupadas por lotes (batched) suelen tener longitudes diferentes, por lo que no se pueden convertir en tensores de tamaño fijo. El relleno (también conocido como “Padding”) y el truncamiento (conocido como “Truncation”) son estrategias para abordar este problema y crear tensores rectangulares a partir de lotes de longitudes variables. El relleno agrega un <strong>padding token</strong> especial para garantizar que las secuencias más cortas tengan la misma longitud que la secuencia más larga en un lote o la longitud máxima aceptada por el modelo. El truncamiento funciona en la otra dirección al truncar secuencias largas.</p> <p data-svelte-h="svelte-ngwi70">En la mayoría de los casos, es bastante eficaz rellenar el lote hasta la longitud de la secuencia más larga y truncar hasta la longitud máxima que un modelo puede aceptar. Sin embargo, la API admite más estrategias si las necesitas. Los tres argumentos que necesitas son: <code>padding</code>, <code>truncation</code> y <code>max_length</code>.</p> <p data-svelte-h="svelte-foyeqf">El argumento <code>padding</code> controla el relleno. Puede ser un booleano o una cadena:</p> <ul data-svelte-h="svelte-41rrjh"><li><code>True</code> o <code>&#39;longest&#39;</code>: rellena hasta la longitud de la secuencia más larga en el lote (no se aplica relleno si solo proporcionas una única secuencia).</li> <li><code>&#39;max_length&#39;</code>: rellena hasta una longitud especificada por el argumento <code>max_length</code> o la longitud máxima aceptada
+		<link href="/huggingface-transformers/en/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/entry/start.ede98c4c.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/scheduler.36a0863c.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/singletons.16c0b1b3.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/index.733708bb.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/paths.c3d84205.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/entry/app.83262e28.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/index.f891bdb2.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/nodes/0.a4f7162e.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/each.e59479a4.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/nodes/17.ca069f35.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/Heading.3fb90772.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;Relleno y truncamiento&quot;,&quot;local&quot;:&quot;relleno-y-truncamiento&quot;,&quot;sections&quot;:[],&quot;depth&quot;:1}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>   <h1 class="relative group"><a id="relleno-y-truncamiento" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#relleno-y-truncamiento"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>Relleno y truncamiento</span></h1> <p data-svelte-h="svelte-9hx8pb">Las entradas agrupadas por lotes (batched) suelen tener longitudes diferentes, por lo que no se pueden convertir en tensores de tamaño fijo. El relleno (también conocido como “Padding”) y el truncamiento (conocido como “Truncation”) son estrategias para abordar este problema y crear tensores rectangulares a partir de lotes de longitudes variables. El relleno agrega un <strong>padding token</strong> especial para garantizar que las secuencias más cortas tengan la misma longitud que la secuencia más larga en un lote o la longitud máxima aceptada por el modelo. El truncamiento funciona en la otra dirección al truncar secuencias largas.</p> <p data-svelte-h="svelte-ngwi70">En la mayoría de los casos, es bastante eficaz rellenar el lote hasta la longitud de la secuencia más larga y truncar hasta la longitud máxima que un modelo puede aceptar. Sin embargo, la API admite más estrategias si las necesitas. Los tres argumentos que necesitas son: <code>padding</code>, <code>truncation</code> y <code>max_length</code>.</p> <p data-svelte-h="svelte-foyeqf">El argumento <code>padding</code> controla el relleno. Puede ser un booleano o una cadena:</p> <ul data-svelte-h="svelte-41rrjh"><li><code>True</code> o <code>&#39;longest&#39;</code>: rellena hasta la longitud de la secuencia más larga en el lote (no se aplica relleno si solo proporcionas una única secuencia).</li> <li><code>&#39;max_length&#39;</code>: rellena hasta una longitud especificada por el argumento <code>max_length</code> o la longitud máxima aceptada
 por el modelo si no se proporciona <code>max_length</code> (<code>max_length=None</code>). El relleno se aplicará incluso si solo proporcionas una única secuencia.</li> <li><code>False</code> o <code>&#39;do_not_pad&#39;</code>: no se aplica relleno. Este es el comportamiento predeterminado.</li></ul> <p data-svelte-h="svelte-18gv4er">El argumento <code>truncation</code> controla el truncamiento. Puede ser un booleano o una cadena:</p> <ul data-svelte-h="svelte-1aqpvyz"><li><code>True</code> o <code>&#39;longest_first&#39;</code>: trunca hasta una longitud máxima especificada por el argumento <code>max_length</code> o
 la longitud máxima aceptada por el modelo si no se proporciona <code>max_length</code> (<code>max_length=None</code>). Esto
 truncará token por token, eliminando un token de la secuencia más larga en el par hasta alcanzar la longitud adecuada.</li> <li><code>&#39;only_second&#39;</code>: trunca hasta una longitud máxima especificada por el argumento <code>max_length</code> o la longitud máxima
@@ -22,9 +22,9 @@ la primera oración de un par si se proporciona un par de secuencias (o un lote 
 			
 			<script>
 				{
-					__sveltekit_b4ls6q = {
-						assets: "/docs/transformers/main/es",
-						base: "/docs/transformers/main/es",
+					__sveltekit_1noykze = {
+						assets: "/huggingface-transformers/en",
+						base: "/huggingface-transformers/en",
 						env: {}
 					};
 
@@ -33,8 +33,8 @@ la primera oración de un par si se proporciona un par de secuencias (o un lote 
 					const data = [null,null];
 
 					Promise.all([
-						import("/docs/transformers/main/es/_app/immutable/entry/start.ff5e079f.js"),
-						import("/docs/transformers/main/es/_app/immutable/entry/app.12ec5d09.js")
+						import("/huggingface-transformers/en/_app/immutable/entry/start.ede98c4c.js"),
+						import("/huggingface-transformers/en/_app/immutable/entry/app.83262e28.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 17],

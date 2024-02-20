@@ -1,16 +1,16 @@
 <meta charset="utf-8" /><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;어텐션 메커니즘&quot;,&quot;local&quot;:&quot;attention_mechanisms&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;LSH 어텐션&quot;,&quot;local&quot;:&quot;lsh_attention&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;지역 어텐션&quot;,&quot;local&quot;:&quot;local_attention&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;다른 방법들&quot;,&quot;local&quot;:&quot;other_tricks&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;축별 위치 인코딩&quot;,&quot;local&quot;:&quot;axial_positional_encodings&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}],&quot;depth&quot;:2}],&quot;depth&quot;:1}">
-		<link href="/docs/transformers/main/ko/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
-		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/entry/start.b52dcfcd.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/scheduler.56730f09.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/singletons.394dd9a4.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/index.bdfeb96e.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/paths.538504d0.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/entry/app.9c1dbc76.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/index.1f144517.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/nodes/0.cc7e2a6a.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/each.e59479a4.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/nodes/6.e9740100.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/Heading.57d46534.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;어텐션 메커니즘&quot;,&quot;local&quot;:&quot;attention_mechanisms&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;LSH 어텐션&quot;,&quot;local&quot;:&quot;lsh_attention&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;지역 어텐션&quot;,&quot;local&quot;:&quot;local_attention&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;다른 방법들&quot;,&quot;local&quot;:&quot;other_tricks&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;축별 위치 인코딩&quot;,&quot;local&quot;:&quot;axial_positional_encodings&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}],&quot;depth&quot;:2}],&quot;depth&quot;:1}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>   <h1 class="relative group"><a id="attention_mechanisms" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#attention_mechanisms"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>어텐션 메커니즘</span></h1> <p data-svelte-h="svelte-jt294z">대부분의 트랜스포머 모델은 정방행렬인 전체 어텐션을 사용합니다.
+		<link href="/huggingface-transformers/en/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/entry/start.6e91440d.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/scheduler.56730f09.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/singletons.f4fa9092.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/index.bdfeb96e.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/paths.1ad88cbe.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/entry/app.1d8748f0.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/index.1f144517.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/nodes/0.25510995.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/each.e59479a4.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/nodes/6.e9740100.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/Heading.57d46534.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;어텐션 메커니즘&quot;,&quot;local&quot;:&quot;attention_mechanisms&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;LSH 어텐션&quot;,&quot;local&quot;:&quot;lsh_attention&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;지역 어텐션&quot;,&quot;local&quot;:&quot;local_attention&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;다른 방법들&quot;,&quot;local&quot;:&quot;other_tricks&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;축별 위치 인코딩&quot;,&quot;local&quot;:&quot;axial_positional_encodings&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}],&quot;depth&quot;:2}],&quot;depth&quot;:1}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>   <h1 class="relative group"><a id="attention_mechanisms" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#attention_mechanisms"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>어텐션 메커니즘</span></h1> <p data-svelte-h="svelte-jt294z">대부분의 트랜스포머 모델은 정방행렬인 전체 어텐션을 사용합니다.
 하지만 이는 긴 텍스트를 다룰 때는 큰 계산 병목 현상을 유발할 수 있습니다.
 <code>Longformer</code>와 <code>Reformer</code>는 훈련 속도를 높이기 위해 어텐션 행렬의 희소 버전을 사용하여 효율을 높이려는 모델입니다.</p>  <h2 class="relative group"><a id="lsh_attention" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#lsh_attention"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>LSH 어텐션</span></h2> <p data-svelte-h="svelte-6wbt6"><a href="model_doc/reformer">Reformer</a>는 LSH(Locality Sensitive Hashing) 어텐션을 사용합니다. softmax(QK^t)에서는 행렬 QK^t의 (softmax 차원에서) 가장 큰 요소들만 유용한 기여를 할 것입니다.
 따라서 각각의 쿼리 q에 대해, q와 가까운 키 k만 고려할 수 있습니다. 해시 함수는 q와 k가 가까운지 여부를 결정하는 데 사용됩니다.
@@ -24,9 +24,9 @@
 			
 			<script>
 				{
-					__sveltekit_1tvlkwq = {
-						assets: "/docs/transformers/main/ko",
-						base: "/docs/transformers/main/ko",
+					__sveltekit_1nwaz16 = {
+						assets: "/huggingface-transformers/en",
+						base: "/huggingface-transformers/en",
 						env: {}
 					};
 
@@ -35,8 +35,8 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("/docs/transformers/main/ko/_app/immutable/entry/start.b52dcfcd.js"),
-						import("/docs/transformers/main/ko/_app/immutable/entry/app.9c1dbc76.js")
+						import("/huggingface-transformers/en/_app/immutable/entry/start.6e91440d.js"),
+						import("/huggingface-transformers/en/_app/immutable/entry/app.1d8748f0.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 6],

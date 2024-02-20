@@ -1,18 +1,18 @@
 <meta charset="utf-8" /><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;단일 영상 기반 깊이 추정&quot;,&quot;local&quot;:&quot;depth-estimation-pipeline&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;깊이 추정 파이프라인&quot;,&quot;local&quot;:&quot;depth-estimation-inference-by-hand&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;직접 깊이 추정 추론하기&quot;,&quot;local&quot;:&quot;depth-estimation-inference-by-hand&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}">
-		<link href="/docs/transformers/main/ko/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
-		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/entry/start.b52dcfcd.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/scheduler.56730f09.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/singletons.394dd9a4.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/index.bdfeb96e.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/paths.538504d0.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/entry/app.9c1dbc76.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/index.1f144517.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/nodes/0.cc7e2a6a.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/each.e59479a4.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/nodes/58.ebf26e46.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/Tip.41e845e5.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/CodeBlock.738eeccb.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ko/_app/immutable/chunks/Heading.57d46534.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;단일 영상 기반 깊이 추정&quot;,&quot;local&quot;:&quot;depth-estimation-pipeline&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;깊이 추정 파이프라인&quot;,&quot;local&quot;:&quot;depth-estimation-inference-by-hand&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;직접 깊이 추정 추론하기&quot;,&quot;local&quot;:&quot;depth-estimation-inference-by-hand&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>   <h1 class="relative group"><a id="depth-estimation-pipeline" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#depth-estimation-pipeline"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>단일 영상 기반 깊이 추정</span></h1> <p data-svelte-h="svelte-18h62fn">단일 영상 기반 깊이 추정은 한 장면의 단일 이미지에서 장면의 깊이 정보를 예측하는 컴퓨터 비전 작업입니다.
+		<link href="/huggingface-transformers/en/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/entry/start.6e91440d.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/scheduler.56730f09.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/singletons.f4fa9092.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/index.bdfeb96e.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/paths.1ad88cbe.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/entry/app.1d8748f0.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/index.1f144517.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/nodes/0.25510995.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/each.e59479a4.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/nodes/58.ebf26e46.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/Tip.41e845e5.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/CodeBlock.738eeccb.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/Heading.57d46534.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;단일 영상 기반 깊이 추정&quot;,&quot;local&quot;:&quot;depth-estimation-pipeline&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;깊이 추정 파이프라인&quot;,&quot;local&quot;:&quot;depth-estimation-inference-by-hand&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;직접 깊이 추정 추론하기&quot;,&quot;local&quot;:&quot;depth-estimation-inference-by-hand&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>   <h1 class="relative group"><a id="depth-estimation-pipeline" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#depth-estimation-pipeline"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>단일 영상 기반 깊이 추정</span></h1> <p data-svelte-h="svelte-18h62fn">단일 영상 기반 깊이 추정은 한 장면의 단일 이미지에서 장면의 깊이 정보를 예측하는 컴퓨터 비전 작업입니다.
 즉, 단일 카메라 시점의 장면에 있는 물체의 거리를 예측하는 과정입니다.</p> <p data-svelte-h="svelte-jyvqzi">단일 영상 기반 깊이 추정은 3D 재구성, 증강 현실, 자율 주행, 로봇 공학 등 다양한 분야에서 응용됩니다.
 조명 조건, 가려짐, 텍스처와 같은 요소의 영향을 받을 수 있는 장면 내 물체와 해당 깊이 정보 간의 복잡한 관계를 모델이 이해해야 하므로 까다로운 작업입니다.</p>  <div class="course-tip  bg-gradient-to-br dark:bg-gradient-to-r before:border-green-500 dark:before:border-green-800 from-green-50 dark:from-gray-900 to-white dark:to-gray-950 border border-green-50 text-green-700 dark:text-gray-400">이 튜토리얼에서 다루는 작업은 다음 모델 아키텍처에서 지원됩니다:
  <p data-svelte-h="svelte-940txo"><a href="../model_doc/dpt">DPT</a>, <a href="../model_doc/glpn">GLPN</a></p> </div> <p data-svelte-h="svelte-pdyjx9">이번 가이드에서 배울 내용은 다음과 같습니다:</p> <ul data-svelte-h="svelte-1c78wn8"><li>깊이 추정 파이프라인 만들기</li> <li>직접 깊이 추정 추론하기</li></ul> <p data-svelte-h="svelte-1bc8bfk">시작하기 전에, 필요한 모든 라이브러리가 설치되어 있는지 확인하세요:</p> <div class="code-block relative"><div class="absolute top-2.5 right-4"><button class="inline-flex items-center relative text-sm focus:text-green-500 cursor-pointer focus:outline-none transition duration-200 ease-in-out opacity-0 mx-0.5   text-gray-600 " title="code excerpt" type="button"><svg class="" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M28,10V28H10V10H28m0-2H10a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2Z" transform="translate(0)"></path><path d="M4,18H2V4A2,2,0,0,1,4,2H18V4H4Z" transform="translate(0)"></path><rect fill="none" width="32" height="32"></rect></svg> <div class="absolute pointer-events-none transition-opacity bg-black text-white py-1 px-2 leading-tight rounded font-normal shadow left-1/2 top-full transform -translate-x-1/2 translate-y-2 opacity-0"><div class="absolute bottom-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-black border-4 border-t-0" style="border-left-color: transparent; border-right-color: transparent; "></div> Copied</div></button></div> <pre class=""><!-- HTML_TAG_START -->pip install -q transformers<!-- HTML_TAG_END --></pre></div>  <h2 class="relative group"><a id="depth-estimation-inference-by-hand" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#depth-estimation-inference-by-hand"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>깊이 추정 파이프라인</span></h2> <p data-svelte-h="svelte-euk5zr">깊이 추정을 추론하는 가장 간단한 방법은 해당 기능을 제공하는 <code>pipeline()</code>을 사용하는 것입니다.
@@ -55,9 +55,9 @@
 			
 			<script>
 				{
-					__sveltekit_1tvlkwq = {
-						assets: "/docs/transformers/main/ko",
-						base: "/docs/transformers/main/ko",
+					__sveltekit_1nwaz16 = {
+						assets: "/huggingface-transformers/en",
+						base: "/huggingface-transformers/en",
 						env: {}
 					};
 
@@ -66,8 +66,8 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("/docs/transformers/main/ko/_app/immutable/entry/start.b52dcfcd.js"),
-						import("/docs/transformers/main/ko/_app/immutable/entry/app.9c1dbc76.js")
+						import("/huggingface-transformers/en/_app/immutable/entry/start.6e91440d.js"),
+						import("/huggingface-transformers/en/_app/immutable/entry/app.1d8748f0.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 58],

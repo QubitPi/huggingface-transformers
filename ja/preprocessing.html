@@ -1,22 +1,22 @@
 <meta charset="utf-8" /><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;Preprocess&quot;,&quot;local&quot;:&quot;preprocess&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Natural Language Processing&quot;,&quot;local&quot;:&quot;natural-language-processing&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Pad&quot;,&quot;local&quot;:&quot;pad&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;Truncation&quot;,&quot;local&quot;:&quot;truncation&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;Build tensors&quot;,&quot;local&quot;:&quot;build-tensors&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Audio&quot;,&quot;local&quot;:&quot;audio&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Computer Vision&quot;,&quot;local&quot;:&quot;computer-vision&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Pad&quot;,&quot;local&quot;:&quot;pad&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Multi Modal&quot;,&quot;local&quot;:&quot;multi-modal&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}">
-		<link href="/docs/transformers/main/ja/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
-		<link rel="modulepreload" href="/docs/transformers/main/ja/_app/immutable/entry/start.e4e638ff.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ja/_app/immutable/chunks/scheduler.9bc65507.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ja/_app/immutable/chunks/singletons.1a8126ff.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ja/_app/immutable/chunks/index.3b203c72.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ja/_app/immutable/chunks/paths.b54ca2a4.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ja/_app/immutable/entry/app.9eb58bd7.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ja/_app/immutable/chunks/index.707bf1b6.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ja/_app/immutable/nodes/0.aec38eb9.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ja/_app/immutable/chunks/each.e59479a4.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ja/_app/immutable/nodes/131.fe218b8c.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ja/_app/immutable/chunks/Tip.c2ecdbf4.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ja/_app/immutable/chunks/Youtube.e1129c6f.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ja/_app/immutable/chunks/CodeBlock.54a9f38d.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ja/_app/immutable/chunks/DocNotebookDropdown.41f65cb5.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ja/_app/immutable/chunks/globals.7f7f1b26.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ja/_app/immutable/chunks/Markdown.8ab98a13.js">
-		<link rel="modulepreload" href="/docs/transformers/main/ja/_app/immutable/chunks/Heading.342b1fa6.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;Preprocess&quot;,&quot;local&quot;:&quot;preprocess&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Natural Language Processing&quot;,&quot;local&quot;:&quot;natural-language-processing&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Pad&quot;,&quot;local&quot;:&quot;pad&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;Truncation&quot;,&quot;local&quot;:&quot;truncation&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;Build tensors&quot;,&quot;local&quot;:&quot;build-tensors&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Audio&quot;,&quot;local&quot;:&quot;audio&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Computer Vision&quot;,&quot;local&quot;:&quot;computer-vision&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Pad&quot;,&quot;local&quot;:&quot;pad&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Multi Modal&quot;,&quot;local&quot;:&quot;multi-modal&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>   <h1 class="relative group"><a id="preprocess" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#preprocess"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>Preprocess</span></h1>  <div class="flex space-x-1 absolute z-10 right-0 top-0"> <div class="relative colab-dropdown "> <button class="  " type="button">  <img alt="Open In Colab" class="!m-0" src="https://colab.research.google.com/assets/colab-badge.svg"> </button>    </div> <div class="relative colab-dropdown "> <button class="  " type="button">  <img alt="Open In Studio Lab" class="!m-0" src="https://studiolab.sagemaker.aws/studiolab.svg"> </button>    </div></div> <p data-svelte-h="svelte-1ubw5gq">データセットでモデルをトレーニングする前に、それをモデルの期待する入力形式に前処理する必要があります。
+		<link href="/huggingface-transformers/en/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/entry/start.bc37dae2.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/scheduler.9bc65507.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/singletons.487085d6.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/index.3b203c72.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/paths.2a179143.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/entry/app.5e64da0e.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/index.707bf1b6.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/nodes/0.bd0f3500.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/each.e59479a4.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/nodes/131.fe218b8c.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/Tip.c2ecdbf4.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/Youtube.e1129c6f.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/CodeBlock.54a9f38d.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/DocNotebookDropdown.41f65cb5.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/globals.7f7f1b26.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/Markdown.8ab98a13.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/Heading.342b1fa6.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;Preprocess&quot;,&quot;local&quot;:&quot;preprocess&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Natural Language Processing&quot;,&quot;local&quot;:&quot;natural-language-processing&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Pad&quot;,&quot;local&quot;:&quot;pad&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;Truncation&quot;,&quot;local&quot;:&quot;truncation&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3},{&quot;title&quot;:&quot;Build tensors&quot;,&quot;local&quot;:&quot;build-tensors&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Audio&quot;,&quot;local&quot;:&quot;audio&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Computer Vision&quot;,&quot;local&quot;:&quot;computer-vision&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Pad&quot;,&quot;local&quot;:&quot;pad&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Multi Modal&quot;,&quot;local&quot;:&quot;multi-modal&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>   <h1 class="relative group"><a id="preprocess" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#preprocess"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>Preprocess</span></h1>  <div class="flex space-x-1 absolute z-10 right-0 top-0"> <div class="relative colab-dropdown "> <button class="  " type="button">  <img alt="Open In Colab" class="!m-0" src="https://colab.research.google.com/assets/colab-badge.svg"> </button>    </div> <div class="relative colab-dropdown "> <button class="  " type="button">  <img alt="Open In Studio Lab" class="!m-0" src="https://studiolab.sagemaker.aws/studiolab.svg"> </button>    </div></div> <p data-svelte-h="svelte-1ubw5gq">データセットでモデルをトレーニングする前に、それをモデルの期待する入力形式に前処理する必要があります。
 データがテキスト、画像、またはオーディオであるかどうかにかかわらず、それらはテンソルのバッチに変換して組み立てる必要があります。
 🤗 Transformersは、データをモデル用に準備するのに役立つ前処理クラスのセットを提供しています。
 このチュートリアルでは、次のことを学びます：</p> <ul data-svelte-h="svelte-11wptdl"><li>テキストの場合、<a href="./main_classes/tokenizer">Tokenizer</a>を使用してテキストをトークンのシーケンスに変換し、トークンの数値表現を作成し、それらをテンソルに組み立てる方法。</li> <li>音声とオーディオの場合、<a href="./main_classes/feature_extractor">Feature extractor</a>を使用してオーディオ波形から連続的な特徴を抽出し、それらをテンソルに変換する方法。</li> <li>画像入力の場合、<a href="./main_classes/image">ImageProcessor</a>を使用して画像をテンソルに変換する方法。</li> <li>マルチモーダル入力の場合、<a href="./main_classes/processors">Processor</a>を使用してトークナイザと特徴抽出器または画像プロセッサを組み合わせる方法。</li></ul>  <div class="course-tip  bg-gradient-to-br dark:bg-gradient-to-r before:border-green-500 dark:before:border-green-800 from-green-50 dark:from-gray-900 to-white dark:to-gray-950 border border-green-50 text-green-700 dark:text-gray-400"><p data-svelte-h="svelte-1gtevip"><code>AutoProcessor</code>は常に動作し、使用するモデルに適切なクラスを自動的に選択します。
@@ -202,9 +202,9 @@ array([[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, 
 			
 			<script>
 				{
-					__sveltekit_l6ewbf = {
-						assets: "/docs/transformers/main/ja",
-						base: "/docs/transformers/main/ja",
+					__sveltekit_htmg3a = {
+						assets: "/huggingface-transformers/en",
+						base: "/huggingface-transformers/en",
 						env: {}
 					};
 
@@ -213,8 +213,8 @@ array([[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, 
 					const data = [null,null];
 
 					Promise.all([
-						import("/docs/transformers/main/ja/_app/immutable/entry/start.e4e638ff.js"),
-						import("/docs/transformers/main/ja/_app/immutable/entry/app.9eb58bd7.js")
+						import("/huggingface-transformers/en/_app/immutable/entry/start.bc37dae2.js"),
+						import("/huggingface-transformers/en/_app/immutable/entry/app.5e64da0e.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 131],

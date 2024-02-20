@@ -1,18 +1,18 @@
 <meta charset="utf-8" /><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;Compartir modelos personalizados&quot;,&quot;local&quot;:&quot;compartir-modelos-personalizados&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Escribir una configuración personalizada&quot;,&quot;local&quot;:&quot;escribir-una-configuración-personalizada&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Escribir un modelo personalizado&quot;,&quot;local&quot;:&quot;escribir-un-modelo-personalizado&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Enviar el código al Hub&quot;,&quot;local&quot;:&quot;enviar-el-código-al-hub&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Usar un modelo con código personalizado&quot;,&quot;local&quot;:&quot;usar-un-modelo-con-código-personalizado&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Registrar un model con código personalizado a las clases automáticas&quot;,&quot;local&quot;:&quot;registrar-un-model-con-código-personalizado-a-las-clases-automáticas&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}">
-		<link href="/docs/transformers/main/es/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
-		<link rel="modulepreload" href="/docs/transformers/main/es/_app/immutable/entry/start.ff5e079f.js">
-		<link rel="modulepreload" href="/docs/transformers/main/es/_app/immutable/chunks/scheduler.36a0863c.js">
-		<link rel="modulepreload" href="/docs/transformers/main/es/_app/immutable/chunks/singletons.46861b0d.js">
-		<link rel="modulepreload" href="/docs/transformers/main/es/_app/immutable/chunks/index.733708bb.js">
-		<link rel="modulepreload" href="/docs/transformers/main/es/_app/immutable/chunks/paths.c201d501.js">
-		<link rel="modulepreload" href="/docs/transformers/main/es/_app/immutable/entry/app.12ec5d09.js">
-		<link rel="modulepreload" href="/docs/transformers/main/es/_app/immutable/chunks/index.f891bdb2.js">
-		<link rel="modulepreload" href="/docs/transformers/main/es/_app/immutable/nodes/0.222dfd74.js">
-		<link rel="modulepreload" href="/docs/transformers/main/es/_app/immutable/chunks/each.e59479a4.js">
-		<link rel="modulepreload" href="/docs/transformers/main/es/_app/immutable/nodes/9.f5d08681.js">
-		<link rel="modulepreload" href="/docs/transformers/main/es/_app/immutable/chunks/Tip.a8272f7f.js">
-		<link rel="modulepreload" href="/docs/transformers/main/es/_app/immutable/chunks/CodeBlock.3ec784ea.js">
-		<link rel="modulepreload" href="/docs/transformers/main/es/_app/immutable/chunks/Heading.3fb90772.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;Compartir modelos personalizados&quot;,&quot;local&quot;:&quot;compartir-modelos-personalizados&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Escribir una configuración personalizada&quot;,&quot;local&quot;:&quot;escribir-una-configuración-personalizada&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Escribir un modelo personalizado&quot;,&quot;local&quot;:&quot;escribir-un-modelo-personalizado&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Enviar el código al Hub&quot;,&quot;local&quot;:&quot;enviar-el-código-al-hub&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Usar un modelo con código personalizado&quot;,&quot;local&quot;:&quot;usar-un-modelo-con-código-personalizado&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Registrar un model con código personalizado a las clases automáticas&quot;,&quot;local&quot;:&quot;registrar-un-model-con-código-personalizado-a-las-clases-automáticas&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>   <h1 class="relative group"><a id="compartir-modelos-personalizados" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#compartir-modelos-personalizados"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>Compartir modelos personalizados</span></h1> <p data-svelte-h="svelte-tr5y5v">La biblioteca 🤗 Transformers está diseñada para ser fácilmente ampliable. Cada modelo está completamente codificado
+		<link href="/huggingface-transformers/en/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/entry/start.ede98c4c.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/scheduler.36a0863c.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/singletons.16c0b1b3.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/index.733708bb.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/paths.c3d84205.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/entry/app.83262e28.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/index.f891bdb2.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/nodes/0.a4f7162e.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/each.e59479a4.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/nodes/9.f5d08681.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/Tip.a8272f7f.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/CodeBlock.3ec784ea.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/Heading.3fb90772.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;Compartir modelos personalizados&quot;,&quot;local&quot;:&quot;compartir-modelos-personalizados&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Escribir una configuración personalizada&quot;,&quot;local&quot;:&quot;escribir-una-configuración-personalizada&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Escribir un modelo personalizado&quot;,&quot;local&quot;:&quot;escribir-un-modelo-personalizado&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Enviar el código al Hub&quot;,&quot;local&quot;:&quot;enviar-el-código-al-hub&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Usar un modelo con código personalizado&quot;,&quot;local&quot;:&quot;usar-un-modelo-con-código-personalizado&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Registrar un model con código personalizado a las clases automáticas&quot;,&quot;local&quot;:&quot;registrar-un-model-con-código-personalizado-a-las-clases-automáticas&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>   <h1 class="relative group"><a id="compartir-modelos-personalizados" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#compartir-modelos-personalizados"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>Compartir modelos personalizados</span></h1> <p data-svelte-h="svelte-tr5y5v">La biblioteca 🤗 Transformers está diseñada para ser fácilmente ampliable. Cada modelo está completamente codificado
 sin abstracción en una subcarpeta determinada del repositorio, por lo que puedes copiar fácilmente un archivo del modelo
 y ajustarlo según tus necesidades.</p> <p data-svelte-h="svelte-109xt20">Si estás escribiendo un modelo completamente nuevo, podría ser más fácil comenzar desde cero. En este tutorial, te mostraremos
 cómo escribir un modelo personalizado y su configuración para que pueda usarse dentro de Transformers, y cómo puedes compartirlo
@@ -182,9 +182,9 @@ en cualquier clase del modelo automático debe coincidir con el <code>config_cla
 			
 			<script>
 				{
-					__sveltekit_b4ls6q = {
-						assets: "/docs/transformers/main/es",
-						base: "/docs/transformers/main/es",
+					__sveltekit_1noykze = {
+						assets: "/huggingface-transformers/en",
+						base: "/huggingface-transformers/en",
 						env: {}
 					};
 
@@ -193,8 +193,8 @@ en cualquier clase del modelo automático debe coincidir con el <code>config_cla
 					const data = [null,null];
 
 					Promise.all([
-						import("/docs/transformers/main/es/_app/immutable/entry/start.ff5e079f.js"),
-						import("/docs/transformers/main/es/_app/immutable/entry/app.12ec5d09.js")
+						import("/huggingface-transformers/en/_app/immutable/entry/start.ede98c4c.js"),
+						import("/huggingface-transformers/en/_app/immutable/entry/app.83262e28.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 9],

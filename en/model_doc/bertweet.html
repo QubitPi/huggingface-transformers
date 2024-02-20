@@ -1,20 +1,20 @@
 <meta charset="utf-8" /><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;BERTweet&quot;,&quot;local&quot;:&quot;bertweet&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Overview&quot;,&quot;local&quot;:&quot;overview&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Usage example&quot;,&quot;local&quot;:&quot;usage-example&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;BertweetTokenizer&quot;,&quot;local&quot;:&quot;transformers.BertweetTokenizer&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}">
-		<link href="/docs/transformers/main/en/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
-		<link rel="modulepreload" href="/docs/transformers/main/en/_app/immutable/entry/start.8d65897e.js">
-		<link rel="modulepreload" href="/docs/transformers/main/en/_app/immutable/chunks/scheduler.9bc65507.js">
-		<link rel="modulepreload" href="/docs/transformers/main/en/_app/immutable/chunks/singletons.11884b12.js">
-		<link rel="modulepreload" href="/docs/transformers/main/en/_app/immutable/chunks/index.3b203c72.js">
-		<link rel="modulepreload" href="/docs/transformers/main/en/_app/immutable/chunks/paths.22775d70.js">
-		<link rel="modulepreload" href="/docs/transformers/main/en/_app/immutable/entry/app.190d414e.js">
-		<link rel="modulepreload" href="/docs/transformers/main/en/_app/immutable/chunks/index.707bf1b6.js">
-		<link rel="modulepreload" href="/docs/transformers/main/en/_app/immutable/nodes/0.b4c87bf7.js">
-		<link rel="modulepreload" href="/docs/transformers/main/en/_app/immutable/chunks/each.e59479a4.js">
-		<link rel="modulepreload" href="/docs/transformers/main/en/_app/immutable/nodes/72.f0c3b13f.js">
-		<link rel="modulepreload" href="/docs/transformers/main/en/_app/immutable/chunks/Tip.c2ecdbf4.js">
-		<link rel="modulepreload" href="/docs/transformers/main/en/_app/immutable/chunks/Docstring.17db21ae.js">
-		<link rel="modulepreload" href="/docs/transformers/main/en/_app/immutable/chunks/globals.7f7f1b26.js">
-		<link rel="modulepreload" href="/docs/transformers/main/en/_app/immutable/chunks/Heading.342b1fa6.js">
-		<link rel="modulepreload" href="/docs/transformers/main/en/_app/immutable/chunks/CodeBlock.54a9f38d.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;BERTweet&quot;,&quot;local&quot;:&quot;bertweet&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Overview&quot;,&quot;local&quot;:&quot;overview&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Usage example&quot;,&quot;local&quot;:&quot;usage-example&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;BertweetTokenizer&quot;,&quot;local&quot;:&quot;transformers.BertweetTokenizer&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>   <h1 class="relative group"><a id="bertweet" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#bertweet"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>BERTweet</span></h1>  <h2 class="relative group"><a id="overview" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#overview"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>Overview</span></h2> <p data-svelte-h="svelte-1tvfkok">The BERTweet model was proposed in <a href="https://www.aclweb.org/anthology/2020.emnlp-demos.2.pdf" rel="nofollow">BERTweet: A pre-trained language model for English Tweets</a> by Dat Quoc Nguyen, Thanh Vu, Anh Tuan Nguyen.</p> <p data-svelte-h="svelte-vfdo9a">The abstract from the paper is the following:</p> <p data-svelte-h="svelte-eh682o"><em>We present BERTweet, the first public large-scale pre-trained language model for English Tweets. Our BERTweet, having
+		<link href="/huggingface-transformers/en/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/entry/start.efded4da.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/scheduler.9bc65507.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/singletons.8d67d578.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/index.3b203c72.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/paths.8fdef99e.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/entry/app.ed7e830b.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/index.707bf1b6.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/nodes/0.f6d57dd5.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/each.e59479a4.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/nodes/72.f0c3b13f.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/Tip.c2ecdbf4.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/Docstring.17db21ae.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/globals.7f7f1b26.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/Heading.342b1fa6.js">
+		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/CodeBlock.54a9f38d.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;BERTweet&quot;,&quot;local&quot;:&quot;bertweet&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Overview&quot;,&quot;local&quot;:&quot;overview&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Usage example&quot;,&quot;local&quot;:&quot;usage-example&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;BertweetTokenizer&quot;,&quot;local&quot;:&quot;transformers.BertweetTokenizer&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>   <h1 class="relative group"><a id="bertweet" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#bertweet"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>BERTweet</span></h1>  <h2 class="relative group"><a id="overview" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#overview"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>Overview</span></h2> <p data-svelte-h="svelte-1tvfkok">The BERTweet model was proposed in <a href="https://www.aclweb.org/anthology/2020.emnlp-demos.2.pdf" rel="nofollow">BERTweet: A pre-trained language model for English Tweets</a> by Dat Quoc Nguyen, Thanh Vu, Anh Tuan Nguyen.</p> <p data-svelte-h="svelte-vfdo9a">The abstract from the paper is the following:</p> <p data-svelte-h="svelte-eh682o"><em>We present BERTweet, the first public large-scale pre-trained language model for English Tweets. Our BERTweet, having
 the same architecture as BERT-base (Devlin et al., 2019), is trained using the RoBERTa pre-training procedure (Liu et
 al., 2019). Experiments show that BERTweet outperforms strong baselines RoBERTa-base and XLM-R-base (Conneau et al.,
 2020), producing better performance results than the previous state-of-the-art models on three Tweet NLP tasks:
@@ -106,9 +106,9 @@ special tokens using the tokenizer <code>prepare_for_model</code> method.</p></d
 			
 			<script>
 				{
-					__sveltekit_13r23yv = {
-						assets: "/docs/transformers/main/en",
-						base: "/docs/transformers/main/en",
+					__sveltekit_trl7tf = {
+						assets: "/huggingface-transformers/en",
+						base: "/huggingface-transformers/en",
 						env: {}
 					};
 
@@ -117,8 +117,8 @@ special tokens using the tokenizer <code>prepare_for_model</code> method.</p></d
 					const data = [null,null];
 
 					Promise.all([
-						import("/docs/transformers/main/en/_app/immutable/entry/start.8d65897e.js"),
-						import("/docs/transformers/main/en/_app/immutable/entry/app.190d414e.js")
+						import("/huggingface-transformers/en/_app/immutable/entry/start.efded4da.js"),
+						import("/huggingface-transformers/en/_app/immutable/entry/app.ed7e830b.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 72],
