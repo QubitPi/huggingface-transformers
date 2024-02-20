@@ -1,16 +1,16 @@
 <meta charset="utf-8" /><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;Attention mechanisms&quot;,&quot;local&quot;:&quot;attention-mechanisms&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;LSH attention&quot;,&quot;local&quot;:&quot;lsh-attention&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Local attention&quot;,&quot;local&quot;:&quot;local-attention&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Other tricks&quot;,&quot;local&quot;:&quot;other-tricks&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Axial positional encodings&quot;,&quot;local&quot;:&quot;axial-positional-encodings&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}],&quot;depth&quot;:2}],&quot;depth&quot;:1}">
-		<link href="/huggingface-transformers/en/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
-		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/entry/start.2eb84be2.js">
-		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/scheduler.9bc65507.js">
-		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/singletons.8debd6a8.js">
-		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/index.3b203c72.js">
-		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/paths.8f35d84a.js">
-		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/entry/app.c4051019.js">
-		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/index.707bf1b6.js">
-		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/nodes/0.a5e51516.js">
-		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/each.e59479a4.js">
-		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/nodes/6.e484d95b.js">
-		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/Heading.342b1fa6.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;Attention mechanisms&quot;,&quot;local&quot;:&quot;attention-mechanisms&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;LSH attention&quot;,&quot;local&quot;:&quot;lsh-attention&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Local attention&quot;,&quot;local&quot;:&quot;local-attention&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Other tricks&quot;,&quot;local&quot;:&quot;other-tricks&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Axial positional encodings&quot;,&quot;local&quot;:&quot;axial-positional-encodings&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}],&quot;depth&quot;:2}],&quot;depth&quot;:1}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>   <h1 class="relative group"><a id="attention-mechanisms" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#attention-mechanisms"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>Attention mechanisms</span></h1> <p data-svelte-h="svelte-1badtw">Most transformer models use full attention in the sense that the attention matrix is square. It can be a big
+		<link href="/huggingface-transformers/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/entry/start.0c5c785a.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/scheduler.9bc65507.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/singletons.682eeb34.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/index.3b203c72.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/paths.023c20fd.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/entry/app.26c85b24.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/index.707bf1b6.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/nodes/0.dcd68134.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/each.e59479a4.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/nodes/6.e484d95b.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/Heading.342b1fa6.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;Attention mechanisms&quot;,&quot;local&quot;:&quot;attention-mechanisms&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;LSH attention&quot;,&quot;local&quot;:&quot;lsh-attention&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Local attention&quot;,&quot;local&quot;:&quot;local-attention&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Other tricks&quot;,&quot;local&quot;:&quot;other-tricks&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Axial positional encodings&quot;,&quot;local&quot;:&quot;axial-positional-encodings&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}],&quot;depth&quot;:2}],&quot;depth&quot;:1}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>   <h1 class="relative group"><a id="attention-mechanisms" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#attention-mechanisms"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>Attention mechanisms</span></h1> <p data-svelte-h="svelte-1badtw">Most transformer models use full attention in the sense that the attention matrix is square. It can be a big
 computational bottleneck when you have long texts. Longformer and reformer are models that try to be more efficient and
 use a sparse version of the attention matrix to speed up training.</p>  <h2 class="relative group"><a id="lsh-attention" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#lsh-attention"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>LSH attention</span></h2> <p data-svelte-h="svelte-1s477ej"><a href="model_doc/reformer">Reformer</a> uses LSH attention. In the softmax(QK^t), only the biggest elements (in the softmax
 dimension) of the matrix QK^t are going to give useful contributions. So for each query q in Q, we can consider only
@@ -33,9 +33,9 @@ in E2.</p>  <p></p>
 			
 			<script>
 				{
-					__sveltekit_56qh32 = {
-						assets: "/huggingface-transformers/en",
-						base: "/huggingface-transformers/en",
+					__sveltekit_nduh7d = {
+						assets: "/huggingface-transformers",
+						base: "/huggingface-transformers",
 						env: {}
 					};
 
@@ -44,8 +44,8 @@ in E2.</p>  <p></p>
 					const data = [null,null];
 
 					Promise.all([
-						import("/huggingface-transformers/en/_app/immutable/entry/start.2eb84be2.js"),
-						import("/huggingface-transformers/en/_app/immutable/entry/app.c4051019.js")
+						import("/huggingface-transformers/_app/immutable/entry/start.0c5c785a.js"),
+						import("/huggingface-transformers/_app/immutable/entry/app.26c85b24.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 6],

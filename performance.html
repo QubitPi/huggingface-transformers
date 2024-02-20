@@ -1,16 +1,16 @@
 <meta charset="utf-8" /><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;Performance and Scalability&quot;,&quot;local&quot;:&quot;performance-and-scalability&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Training&quot;,&quot;local&quot;:&quot;training&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Inference&quot;,&quot;local&quot;:&quot;inference&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Training and inference&quot;,&quot;local&quot;:&quot;training-and-inference&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Contribute&quot;,&quot;local&quot;:&quot;contribute&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}">
-		<link href="/huggingface-transformers/en/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
-		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/entry/start.2eb84be2.js">
-		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/scheduler.9bc65507.js">
-		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/singletons.8debd6a8.js">
-		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/index.3b203c72.js">
-		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/paths.8f35d84a.js">
-		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/entry/app.c4051019.js">
-		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/index.707bf1b6.js">
-		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/nodes/0.a5e51516.js">
-		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/each.e59479a4.js">
-		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/nodes/331.a6b1abfa.js">
-		<link rel="modulepreload" href="/huggingface-transformers/en/_app/immutable/chunks/Heading.342b1fa6.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;Performance and Scalability&quot;,&quot;local&quot;:&quot;performance-and-scalability&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Training&quot;,&quot;local&quot;:&quot;training&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Inference&quot;,&quot;local&quot;:&quot;inference&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Training and inference&quot;,&quot;local&quot;:&quot;training-and-inference&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Contribute&quot;,&quot;local&quot;:&quot;contribute&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>   <h1 class="relative group"><a id="performance-and-scalability" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#performance-and-scalability"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>Performance and Scalability</span></h1> <p data-svelte-h="svelte-1wq4i4b">Training large transformer models and deploying them to production present various challenges.<br>
+		<link href="/huggingface-transformers/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/entry/start.0c5c785a.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/scheduler.9bc65507.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/singletons.682eeb34.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/index.3b203c72.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/paths.023c20fd.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/entry/app.26c85b24.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/index.707bf1b6.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/nodes/0.dcd68134.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/each.e59479a4.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/nodes/331.a6b1abfa.js">
+		<link rel="modulepreload" href="/huggingface-transformers/_app/immutable/chunks/Heading.342b1fa6.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;Performance and Scalability&quot;,&quot;local&quot;:&quot;performance-and-scalability&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Training&quot;,&quot;local&quot;:&quot;training&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Inference&quot;,&quot;local&quot;:&quot;inference&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Training and inference&quot;,&quot;local&quot;:&quot;training-and-inference&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Contribute&quot;,&quot;local&quot;:&quot;contribute&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>   <h1 class="relative group"><a id="performance-and-scalability" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#performance-and-scalability"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>Performance and Scalability</span></h1> <p data-svelte-h="svelte-1wq4i4b">Training large transformer models and deploying them to production present various challenges.<br>
 During training, the model may require more GPU memory than available or exhibit slow training speed. In the deployment
 phase, the model can struggle to handle the required throughput in a production environment.</p> <p data-svelte-h="svelte-g5ptwa">This documentation aims to assist you in overcoming these challenges and finding the optimal setting for your use-case.
 The guides are divided into training and inference sections, as each comes with different challenges and solutions.
@@ -25,9 +25,9 @@ source of that information (unless it comes directly from you).</p>  <p></p>
 			
 			<script>
 				{
-					__sveltekit_56qh32 = {
-						assets: "/huggingface-transformers/en",
-						base: "/huggingface-transformers/en",
+					__sveltekit_nduh7d = {
+						assets: "/huggingface-transformers",
+						base: "/huggingface-transformers",
 						env: {}
 					};
 
@@ -36,8 +36,8 @@ source of that information (unless it comes directly from you).</p>  <p></p>
 					const data = [null,null];
 
 					Promise.all([
-						import("/huggingface-transformers/en/_app/immutable/entry/start.2eb84be2.js"),
-						import("/huggingface-transformers/en/_app/immutable/entry/app.c4051019.js")
+						import("/huggingface-transformers/_app/immutable/entry/start.0c5c785a.js"),
+						import("/huggingface-transformers/_app/immutable/entry/app.26c85b24.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 331],
